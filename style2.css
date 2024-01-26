@@ -1,0 +1,282 @@
+:root {
+  --primary-color: rgb(236, 236, 236);
+  --secondary-color: rgb(21, 21, 21);
+  --blue-color: #2bc5cd;
+  --orange-color: #ff693d;
+  --spacing: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  /** BACKGROUND COLORS */
+  --rtc-bg-color-primary:var(--blue-color);
+  --rtc-bg-color-secundary:var(--orange-color);
+  --rtc-bg-color-main:var(--primary-color);
+
+  /* Colores en Fuentes */
+  --rtc-fontcolor-primary: var(--primary-color);
+  --rtc-fontcolor-secundary: var(--blue-color);
+  --rtc-fontcolor-terciary: var(--secondary-color);
+
+  /** BORDER UND BORDER RADIOUS  */
+  --rtc-border-radious-primary:1em;
+  --rtc-border-button: 2px solid var(--blue-color);
+  
+  /** COMMON HEIGHT AND WIDTH */
+  --rtc-width-100:100%
+  --rtc-width-75:75%
+  --rtc-height-100:100%
+  --rtc-height-75:75%
+  --rtc-height-firstcell:400px;
+  
+
+
+  /**  SPACINGS*/
+  --rtc-margin-xs: 1em;
+  --rtc-margin-s: 1.5em;
+  --rtc-margin-m: 3em;
+  --rtc-margin-l: 4em;
+  --rtc-margin-xl: 5em;
+  --rtc-margin-xll: 6em;
+  --rtc-margin-xlll: 7em;
+
+  --rtc-padding-xs: 1em;
+  --rtc-padding-s: 2em;
+  --rtc-padding-m: 3em;
+  --rtc-padding-l: 4em;
+  --rtc-padding-xl: 5em;
+  --rtc-padding-xll: 6em;
+  --rtc-padding-xlll: 7em;
+
+  --rtc-gap-xs: 0.3em;
+  --rtc-gap-s: 2em;
+  --rtc-gap-m: 3em;
+
+
+  /** FONT SIZE AND WEIGHT  **/
+  --rtc-fontsize-s:1.2em;
+  --rtc-fontsize-l:1.5em;
+  --rtc-fontsize-xl:2em;
+
+
+  --rtc-font-weight-light:200;
+  --rtc-font-weight-medium:600;
+  --rtc-font-weight-bold:800;
+
+  min-height: 100svh;
+
+
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+
+
+}
+/* Resto del CSS */
+.school {
+  
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
+}
+
+.student {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg);
+}
+
+.time {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/773a5aa425b1502aaac14708/f2b45624-c8f6-3aa0-0ee4-58adda3c89b0.jpg);
+}
+
+.alumni {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/89993ff69c3e5244ad2bf1ba/blondestudentgirlissmilingholdingfoldernotebookherhandsuniversitybackground_101969664.jpg);
+}
+
+.alumni,
+.school,
+.student,
+.time {
+  background-size: cover;
+  max-width:100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-container{
+
+  display: grid;
+  grid-column: 1fr;
+  background: var(--rtc-bg-color-main);
+  margin: var(--rtc-margin-s);
+  padding: var(--rtc-padding-xs);
+  border-radius: var(--rtc-border-radious-primary);
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+  "header"
+  "school"
+  "student"
+  "main"
+  "time"
+  "alumni"
+  "footer";
+  gap: var(--rtc-gap-xs);
+}
+
+.grid-container>header{
+  background-color: var(--blue-color);
+  grid-area: header;
+  height: 100%;
+  display: grid;
+  color: var(--rtc-fontcolor-primary);
+  justify-items: center;
+  padding: var(--rtc-padding-xs) var(--rtc-padding-m);
+  text-align: center;
+}
+
+.grid-container>header>h1{
+  text-transform:uppercase ;
+}
+
+.grid-container>header>p{
+  text-align: justify;
+  font-size: var(--rtc-fontsize-s);
+  
+}
+.school{
+  grid-area: school;
+  height: 300px;
+}
+.student{
+  grid-area: student;
+}
+main{
+  
+  grid-area: main;
+  color: var(--rtc-fontcolor-secundary);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  border: var(--rtc-border-button);
+    text-align: center;
+  }
+
+
+.time{
+  grid-area: time;
+}
+.alumni{
+  grid-area: alumni;
+}
+footer{
+  grid-area: footer;
+  display: grid;
+  background-color: var(--rtc-bg-color-secundary);
+  color: var(--rtc-fontcolor-primary);
+  align-content: space-around;
+  padding: var(--rtc-padding-xs) var(--rtc-padding-m);
+  text-align: justify;
+  font-size: var(--rtc-fontsize-s);
+}
+footer>button{
+  width: 150px ;
+  height: 50px;
+  font-weight: var(--rtc-font-weight-medium);
+  text-transform:uppercase ;
+  cursor: pointer;
+}
+@media screen and (min-width:0px) and (max-width:430px){
+  .grid-container{
+    grid-template-rows: 60% repeat(5,30% ) auto;
+  }
+.grid-container>*:not(header){
+    height: 100%;
+    align-content: space-around;
+  }
+  div.grid-container>footer{
+    gap: var(--rtc-gap-s);
+  }
+
+}
+@media screen and (min-width:430px) and (max-width:600px) {
+  .grid-container{
+  grid-template-rows: 3fr repeat(5,360px) 1.5fr;
+  gap: var(--rtc-gap-s);
+}
+.grid-container>.school{
+  height: 100%;
+}
+div.grid-container>footer{
+  gap: var(--rtc-gap-m);
+}
+}
+
+
+
+
+@media screen and (min-width:600px) and (max-width:1000px) {
+  .grid-container{
+  grid-template-columns: repeat(2, minmax(150px,1fr));
+  grid-template-rows: repeat(auto-fit, minmax(200px,1fr));
+
+    grid-template-areas: 
+    "header header"
+    "school student"
+    "main main"
+    "time alumni"
+    "footer footer";
+    gap: var(--rtc-gap-xs);
+  }
+  .grid-container>header{
+    height: 400px;
+    padding:var(--rtc-padding-xs) var(--rtc-padding-xl);
+  }
+  .grid-container>*:not(header){
+    
+    height: 300px;
+  }
+  .grid-container>main{
+    height: 200px;
+    
+  }
+  .grid-container>.time{
+    background-position-x: 100%;    
+  }
+  .grid-container>header>p{
+    text-align: justify;
+    font-size: var(--rtc-fontsize-l);
+    
+  }
+}
+@media screen and (min-width:1000px) and (max-width:1390px) {
+  .grid-container{
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-template-areas: "header school student"
+    "header main time"
+    "alumni footer footer";
+  }
+  .grid-container>header{
+    height: 100%;
+    padding:0 var(--rtc-padding-xs);
+  }
+.school{
+  height: 300px;
+}
+  div.grid-container>main{
+    text-align: center;
+  }
+  .alumni{
+    border-radius: 0 0 0 var(--rtc-border-radious-primary);
+  }
+}
+@media screen and (min-width:1390px) {
+  .grid-container{
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-template-areas: "header school student"
+    "header main time"
+    "alumni footer footer";
+  }
+  .school{
+    height: 400px;
+  }
+}

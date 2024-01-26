@@ -1,0 +1,308 @@
+:root {
+  /* COLORS */
+  --primary-color: rgb(236, 236, 236);
+  --secondary-color: rgb(21, 21, 21);
+  --blue-color: #2bc5cd;
+  --orange-color: #ff693d;
+  --border: 2px solid var(--blue-color);
+  --spacing: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+  /* WIDTH AND HEIGHT CELLS */
+  --rtc-cell-mobile: 200px;
+  --rtc-cell-s: 200px;
+  --rtc-cell-m: 370px;
+  --rtc-cell-l: 400px;
+  --rtc-cell-xl: 500px;
+  /* FONT SIZE */
+  --rtc-font-title: 4em;
+  --rtc-font-title-mobile: 4em;
+  --rtc-font-parragraf-mobile: 1em;
+  --rtc-font-parragraf: 1.2em;
+  /* SPACINGS */
+  --rtc-margin-xs: 0.5em;
+  --rtc-margin-s: 1em;
+  --rtc-margin-m: 1.5rem;
+  --rtc-margin-l: 2em;
+
+  --rtc-padding-xs: 0.5em;
+  --rtc-padding-s: 1em;
+  --rtc-padding-m: 1.5rem;
+  --rtc-padding-l: 2em;
+  --rtc-padding-xl: 3em;
+
+  --rtc-gap-xs: 5px;
+  --rtc-gap-s: 10px;
+  --rtc-gap-m: 15px;
+  --rtc-gap-l: 20px;
+  --rtc-gap-xl: 25px;
+
+  /* WIDTH */
+  --rtc-width-100: 100%;
+  --rtc-image-size-100: 100%;
+
+  /* HEIGHT */
+  --rtc-height-s: 200px;
+  --rtc-height-400: 400px;
+  --rtc-height-100: 100%;
+}
+
+.school {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
+}
+
+.student {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg);
+}
+
+.time {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/773a5aa425b1502aaac14708/f2b45624-c8f6-3aa0-0ee4-58adda3c89b0.jpg);
+}
+
+.alumni {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/89993ff69c3e5244ad2bf1ba/blondestudentgirlissmilingholdingfoldernotebookherhandsuniversitybackground_101969664.jpg);
+}
+html {
+  min-height: var(--rtc-width-100);
+}
+body {
+  min-height: var(--rtc-width-100);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.alumni,
+.school,
+.student,
+.time {
+  background-size: cover;
+  width: var(--rtc-width-100);
+  height: var(--rtc-width-100);
+  min-height: 200px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--rtc-cell-m), 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  margin: var(--rtc-margin-xs);
+  padding: var(--rtc-padding-l);
+  border-radius: 1em;
+  background-color: var(--primary-color);
+  justify-items: center;
+  height: var(--rtc-width-100);
+  gap: var(--rtc-gap-l);
+}
+.grid-container > header {
+  background-color: var(--blue-color);
+  color: var(--primary-color);
+  grid-row: 1/3;
+  justify-items: center;
+  padding: var(--rtc-padding-m) 0;
+  height: 100%;
+  display: grid;
+}
+.grid-container > header > h1 {
+  text-transform: uppercase;
+  text-align: center;
+}
+.grid-container > header > p {
+  padding: 0 2em 1.4em 2em;
+  text-align: justify;
+  font-size: var(--rtc-font-parragraf);
+}
+.grid-container > .alumni {
+  grid-row: 3;
+  height: 400px;
+}
+.grid-container > .school {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  height: 400px;
+}
+.grid-container > .student {
+  height: 400px;
+}
+.grid-container > .time {
+  height: 400px;
+}
+main {
+  width: 100%;
+  height: 100%;
+  border: var(--border);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  color: var(--blue-color);
+  padding: 0 var(--rtc-padding-xl);
+  text-align: center;
+}
+footer {
+  width: 100%;
+  grid-column: 2/-1;
+  background-color: var(--orange-color);
+  color: var(--primary-color);
+  display: grid;
+  padding: 0 2em;
+  align-content: space-around;
+  font-size: var(--rtc-font-parragraf);
+}
+footer > button {
+  width: 150px;
+  height: 6em;
+  padding: 2em;
+  align-self: center;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.7em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.grid-container2 {
+  margin-top: 100px;
+  display: none;
+}
+@media screen and (max-width: 921px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .grid-container > header {
+    grid-row: 1/2;
+  }
+  .grid-container > .student {
+    grid-column: 1;
+    height: 16em;
+  }
+  .grid-container > .alumni {
+    height: fit-content;
+    border-radius: 0 0 0 0px;
+  }
+  .grid-container > .time {
+    height: fit-content;
+  }
+  .grid-container > footer {
+    grid-column: 1/3;
+    padding: 1em;
+    gap: 1em;
+  }
+}
+@media screen and (max-width: 765px) {
+  .grid-container > header > h1 {
+    text-align: center;
+  }
+  main {
+    padding: 1em;
+  }
+  .grid-container > .time {
+    height: 16em;
+  }
+  .grid-container > .school {
+    height: 18em;
+  }
+  .grid-container > .alumni {
+    height: 16em;
+    border-radius: none;
+  }
+  .grid-container > footer > button {
+    height: 3.5em;
+    padding: 1em;
+  }
+}
+@media screen and (max-width: 663px) {
+  div.grid-container {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(7, minmax(var(--rtc-cell-l), 1fr));
+  }
+  main {
+    grid-row: 4;
+  }
+  .grid-container > .time {
+    grid-row: 5;
+    height: 100%;
+  }
+  .grid-container > .school {
+    grid-column: 1;
+    grid-row: 2/3;
+    height: 100%;
+  }
+  .grid-container > .student {
+    grid-row: 3/4;
+    height: 100%;
+  }
+  .grid-container > .alumni {
+    grid-row: 6/7;
+    height: 100%;
+    border-radius: 0 0 0 0;
+  }
+  .grid-container > footer {
+    grid-row: 7/8;
+  }
+}
+@media screen and (max-width: 490px) {
+  div.grid-container {
+    grid-template-rows: 600px repeat(5, 2fr) 500px;
+    grid-template-columns: 100%;
+  }
+  .grid-container > .time,
+  .grid-container > .school,
+  .grid-container > .student,
+  .grid-container > .alumni {
+    height: 100%;
+    width: 100%;
+  }
+  .grid-container > .time {
+    background-position: 50% 60%;
+  }
+}
+@media screen and (max-width: 422px) {
+  div.grid-container {
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr repeat(5, 0.5fr) 1fr;
+  }
+  .grid-container > .time,
+  .grid-container > .school,
+  .grid-container > .student,
+  .grid-container > .alumni {
+    height: 100%;
+  }
+
+  @media screen and (max-width: 325px) {
+    div.grid-container {
+      grid-template-rows: 1fr repeat(5, 0.5fr) 1fr;
+      height: 100%;
+    }
+  }
+  @media screen and (max-width: 307px) {
+    div.grid-container > header {
+      height: 100%;
+    }
+    div.grid-container > main {
+      height: var(--rtc-height-100);
+      width: var(--rtc-width-100);
+    }
+    div.grid-container > header > p {
+      width: minmax(5px, 200px);
+      height: minmax(100px 300px);
+
+      text-align: center;
+      font-size: var(--rtc-font-parragraf-mobile);
+    }
+    .grid-container > .time,
+    .grid-container > .school,
+    .grid-container > .student,
+    .grid-container > .alumni {
+      width: 200px;
+      height: 100%;
+    }
+  }
+
+  @media screen and (min-width: 1500px) {
+    .grid-container {
+      display: grid;
+      align-content: center;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
